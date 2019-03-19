@@ -1,0 +1,53 @@
+.row {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.05); }
+
+/*Buttons*/
+.btn-outline-danger {
+  /* color: #dc3545; */
+  border-color: #dc3545;
+  background-color: #fff;
+}
+
+.btn-outline-warning {
+  /* color: #ffc107; */
+  border-color: #ffc107;
+  background-color: #fff;
+}
+
+.btn-outline-success {
+  /* color: #28a745; */
+  border-color: #28a745;
+  background-color: #fff;
+}
+
+.btn-outline-info {
+  /* color: #17a2b8; */
+  border-color: #17a2b8;
+  background-color: #fff;
+}
+
+/*priority status*/
+  .veryHigh{
+    color: red ; 
+    border-color: red; 
+  }
+
+  .high{
+    color: green ; 
+    border-color: green; 
+  }
+
+  /*Status buttons centered in div*/
+  #buttonGroup{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }

@@ -1,0 +1,57 @@
+<div class="row grow" appTeammember>
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <h5 class="alert alert-warning"> TO DO :  {{ account.name }}</h5>
+    <hr />
+  
+
+    <div id="buttonGroup">
+    <!-- Status Buttons  -->
+    <div class="btn-group" role="group">
+      <!-- Button 'Pending' -->
+      <button 
+        type="button" 
+        [ngClass] = "isPending? 'btn btn-danger' : 'btn btn-outline-danger'"
+        (click) = "isPendingButton()"
+        >Pending</button>
+
+      <!-- Button 'In progress' -->  
+      <button 
+      type="button" 
+      [ngClass] = "!isInProgress? 'btn  btn-outline-warning' : 'btn btn-warning'"
+      (click) = "inProgressButton()" > In progress</button>
+
+      <!-- Button 'To be reviewed' -->  
+      <button type="button" 
+      [ngClass] = "!toBeReviewed? 'btn btn-outline-success' : 'btn btn-success'"
+      (click) = "toBeReviewedButton()">To be reviewed</button>
+
+      <!-- Button 'Reviewed' -->  
+      <button type="button" 
+      [ngClass] = "!isReviewed? 'btn btn-outline-info' : 'btn btn-info'"
+      (click) = "isReviewedButton()" >Reviewed</button>
+    </div>
+  </div>
+
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-6">
+         <p class="form-control text-center">Assigned from {{ account.team1Member }}</p>
+      </div>
+      <div class="col-md-6">
+        <p class="form-control text-center">Assigned to {{ account.team2Member }}</p>
+      </div>
+    </div> 
+
+    <ul class="form-control text-center" style="list-style: none;">
+    <li 
+      [ngClass] = "{
+      'veryHigh': this.accountsService.accounts[id].priority === 'Very high', 
+      'high': this.accountsService.accounts[id].priority === 'High'   
+      }" >Priority level : {{ account.priority }}</li>
+    </ul>
+    <textarea class="form-control">Comment : {{ account.comment }}</textarea>
+
+  </div>
+</div>
+
